@@ -5,13 +5,11 @@ import Sidemap from './components/Sidemap';
 
 function App() {
   return (
-    <div>
+    <div className='w-full'>
       <Navbar/>
-      <div class="lg:flex lg:h-{100vh] pt-16 bg-[#E5E5E5]">
+      <div class="lg:flex lg:justify-between w-full  lg:h-[calc(100vh-90px)] lg:overflow-y-hidden bg-[#E5E5E5]">
        <Sidemap/>
        <Information />
-       
-       
      
 
       </div>
