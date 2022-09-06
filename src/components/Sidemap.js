@@ -14,7 +14,7 @@ function Sidemap() {
   }
   return (
 
-    <div class= "h-[600px] w-full lg:h-[calc(100vh-90px)] lg:w-[55%] 2xl:w-[68%]">
+    <div class= "h-[600px] w-full lg:h-[calc(100vh-90px)] lg:w-[68%]">
 
       <div className='hidden lg:block p-4 lg:p-0 lg:w-full h-[100%]'>
           <GoogleMap

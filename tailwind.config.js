@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        'muli':['Mulish', 'san-serif']
+        'Muli':['Muli', 'san-serif']
       }
     },
   },

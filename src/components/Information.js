@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import image1 from '../Assets/image-1.png'
-import line from '../Assets/Line.png'
-import purchased from '../Assets/purchased.png'
+import image1 from '../Assets/image-1.svg'
+import line from '../Assets/Line.svg'
+import purchased from '../Assets/purchase.svg'
 import axios from 'axios'
 
 function Information() {
@@ -20,11 +20,11 @@ function Information() {
     console.log(list)
 
     return (
-        <div className='lg:h-full lg:w-[45%] 2xl:w-[32%] font-muli lg:overflow-y-auto'>
+        <div className='lg:h-full  lg:w-[32%] font-muli lg:overflow-y-auto'>
 
             <div id="TQC" className=" z-10  top-0 flex lg:flex  flex-col px-[20px]">
 
-                <div className="flex-1 flex bg-white lg:w-[100%] lg:mx-auto lg:mt-[25px] flex-col h-[556px] p-[20px] rounded-3xl">
+                <div className="flex-1 flex bg-white lg:w-[90%] lg:mx-auto lg:mt-[25px] flex-col h-[556px] p-[20px] rounded-3xl">
 
                     {/*TQC */}
                     <div className='mb-4 border-b-2 '>
@@ -71,30 +71,30 @@ function Information() {
 
             <div id="Activity" className=" top-0 flex lg:flex flex-shrink-0 flex-col px-[20px] transition-width duration-75">
 
-                <div className="flex-1 flex bg-white lg:w-[100%] lg:mx-auto mt-[25px] mb-5 flex-col  h-[900px] p-[22px] rounded-3xl ">
+                <div className="flex-1 flex bg-white lg:w-[90%] lg:mx-auto mt-[25px] mb-5 flex-col  h-[900px] p-[22px] rounded-3xl ">
 
-                    <p className='text-[#54565B] font-semibold text-[16px]'>ACTIVITY</p>
+                    <p className='text-[#54565B] font-semibold text-[16px]'>Activity</p>
 
                     {list?.activities?.map((item, index) =>
 
-                        <div key={index} className='flex justify-between text-[#7C827D] 2xl:px-5 mb-2 mt-4 text-[11px] md:text-[14px]'>
+                        <div key={index} className='flex justify-between text-[#7C827D] 2xl:px-5 mb-2 mt-4 text-[11px]'>
 
-                            <div className='flex gap-2 2xl:gap-4 lg:gap-4 md:gap-10'>
+                            <div className='flex gap-2 lg:gap-3 md:gap-10'>
 
                                 <div className='flex flex-col items-center'>
                                     <img src={purchased} alt='recp' />
-                                    <img src={line} alt='lne' className='h-[60px]'/>
+                                    <img src={line} alt='lne' className='h-[70px]'/>
 
                                 </div>
-                                <div className='2xl:w-[200px] lg:w-[180px] md:w-[270px] w-[130px]' >
-                                    <p className='font-semibold'>{item.action} </p>
-                                    <span className='text-[#7C827D] text-[10px] md:text-[10px]'>{item.description}</span> 
+                                <div className='flex flex-col lg:w-[160px] md:w-[270px] w-[130px]' >
+                                    <p className='font-semibold mt-2 lg:text-[13px]'>{item.action} </p>
+                                    <span className='text-[#7C827D] text-[9px] mt-2 lg:text-[11px]'>{item.description}</span> 
                                 </div>
                                
 
 
                             </div>
-                            <p className='text-[#76AD94] text-[10px] 2xl:text-[13px] lg:text-[11px]'> <span>{item.created}</span> </p>
+                            <p className='text-[#76AD94] text-[9px] mt-2 lg:text-[11px]'> <span>{item.created}</span> </p>
 
                         </div>
                     )}
