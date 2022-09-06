@@ -1,23 +1,48 @@
 import React from 'react'
-import map from '../Assets/Map.png'
-import map2 from '../Assets/map2.png'
+import {useJsApiLoader, GoogleMap, Marker} from '@react-google-maps/api';
+
+const center = {lat:48.8584, lng:2.294}
 
 function Sidemap() {
+
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey:process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+  });
+
+  if (!isLoaded){
+    return <h1>Loading</h1>
+  }
   return (
+
+    <div class= "h-[600px] w-full lg:h-[calc(100vh-90px)] lg:w-[68%]">
+
+      <div className='p-4 lg:p-0 lg:w-full h-[100%]'>
+          <GoogleMap
+          mapContainerStyle={{width:'100%', height:'100%', borderRadius:'50px'}}
+          center={center} zoom={15}
+          options={{
+            zoomControl:false,
+            streetViewControl:false,
+            mapTypeControl:false,
+            fullscreenControl:false,
+          }}
+          >
+            <Marker position={center}/> 
+
+          </GoogleMap>
+      </div>
+
+    </div>
     
-    <div class="lg:h-[calc(100vh-90px)] lg:w-[68%]">
-
-        <div className='lg:hidden mt-8 lg:mt-[100px]'>
-           <img src={map2} alt='mpn2' className='md:w-[760px] md:object-cover md:object-center'/>
-        </div>
-
-      <div class="hidden lg:block w-full h-[100%]">
-        <img src={map} alt='crd-icon' className='object-cover object-center lg:h-[100%] lg:w-full'/>
-      </div>
-
-      </div>
-       
   )
 }
 
 export default Sidemap
+
+
+
+
+
+
+
+

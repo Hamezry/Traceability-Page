@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    body{
-        font-family: 'Mulish', sans-serif;
-    }
+@font-face {
+    font-family: 'MULI';
+    src: url(./fonts/Muli-SemiBold.ttf);
 }
