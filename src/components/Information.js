@@ -20,11 +20,11 @@ function Information() {
     console.log(list)
 
     return (
-        <div className='lg:h-full lg:w-[32%] font-muli lg:overflow-y-auto'>
+        <div className='lg:h-full lg:w-[45%] 2xl:w-[32%] font-muli lg:overflow-y-auto'>
 
             <div id="TQC" className=" z-10  top-0 flex lg:flex  flex-col px-[20px]">
 
-                <div className="flex-1 flex bg-white lg:w-[95%] lg:mx-auto lg:mt-[25px] flex-col h-[556px] p-[20px] rounded-3xl">
+                <div className="flex-1 flex bg-white lg:w-[100%] lg:mx-auto lg:mt-[25px] flex-col h-[556px] p-[20px] rounded-3xl">
 
                     {/*TQC */}
                     <div className='mb-4 border-b-2 '>
@@ -71,7 +71,7 @@ function Information() {
 
             <div id="Activity" className=" top-0 flex lg:flex flex-shrink-0 flex-col px-[20px] transition-width duration-75">
 
-                <div className="flex-1 flex bg-white lg:w-[95%] lg:mx-auto mt-[25px] mb-5 flex-col  h-[900px] p-[22px] rounded-3xl ">
+                <div className="flex-1 flex bg-white lg:w-[100%] lg:mx-auto mt-[25px] mb-5 flex-col  h-[900px] p-[22px] rounded-3xl ">
 
                     <p className='text-[#54565B] font-semibold text-[16px]'>ACTIVITY</p>
 
