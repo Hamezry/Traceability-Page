@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import image1 from '../Assets/image-1.svg'
+import image1 from '../Assets/image-2.png'
 import line from '../Assets/Line.svg'
 import purchased from '../Assets/purchase.svg'
 import axios from 'axios'
