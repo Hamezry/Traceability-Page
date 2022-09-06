@@ -77,7 +77,7 @@ function Information() {
 
                     {list?.activities?.map((item, index) =>
 
-                        <div key={index} className='flex justify-between text-[#7C827D] 2xl:px-5 mb-2 mt-4 text-[11px]'>
+                        <div key={index} className='flex md:justify-between text-[#7C827D] 2xl:px-5 mb-2 mt-4 text-[10px]'>
 
                             <div className='flex gap-2 lg:gap-3 md:gap-10'>
 
@@ -86,7 +86,7 @@ function Information() {
                                     <img src={line} alt='lne' className='h-[70px]'/>
 
                                 </div>
-                                <div className='flex flex-col lg:w-[160px] md:w-[270px] w-[100px]' >
+                                <div className='flex flex-col lg:w-[160px] md:w-[270px] w-[130px]' >
                                     <p className='font-semibold mt-2 lg:text-[13px]'>{item.action} </p>
                                     <span className='text-[#7C827D] text-[9px] mt-2 lg:text-[11px]'>{item.description}</span> 
                                 </div>
