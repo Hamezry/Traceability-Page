@@ -3,21 +3,26 @@ import image1 from '../Assets/image-2.png'
 import line from '../Assets/Line.svg'
 import purchased from '../Assets/purchase.svg'
 import axios from 'axios'
+import { useLocation } from 'react-router-dom'
+
+
 
 function Information() {
 
     const [list, setList] = useState([])
-
+    const search = useLocation().search;
+    const qr_code = new URLSearchParams(search).get('qr_code')
+    
     useEffect(() => {
-        axios.get('https://wb3test.afexnigeria.com/WB3/api/v1/traceability/info/TQC-001-89b940001f')
+        axios.get(`https://wb3test.afexnigeria.com/WB3/api/v1/traceability/info/${qr_code}`)
             .then(res => {
                 setList(res.data.data)
+                console.log(res.data)
             }).catch(err => {
                 console.log(err)
             })
-    }, [])
+    }, [qr_code])
 
-    console.log(list)
 
     return (
         <div className='lg:h-full  lg:w-[32%] font-muli lg:overflow-y-auto'>
@@ -83,14 +88,14 @@ function Information() {
 
                                 <div className='flex flex-col items-center'>
                                     <img src={purchased} alt='recp' />
-                                    <img src={line} alt='lne' className='h-[90px]'/>
+                                    <img src={line} alt='lne' className='h-[90px]' />
 
                                 </div>
                                 <div className='flex flex-col lg:w-[150px] md:w-[270px] w-[130px]' >
                                     <p className='font-semibold mt-2 lg:text-[13px]'>{item.action} </p>
-                                    <span className='text-[#7C827D] text-[9px] mt-2 lg:text-[11px]'>{item.description}</span> 
+                                    <span className='text-[#7C827D] text-[9px] mt-2 lg:text-[11px]'>{item.description}</span>
                                 </div>
-                               
+
 
 
                             </div>
