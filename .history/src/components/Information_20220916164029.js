@@ -81,7 +81,7 @@ function Information() {
 
                     {list?.activities?.map((item, index) =>
 
-                        <div key={index} className='flex 2xl:justify-between stroke-amber-50 text-[#7C827D] 2xl:px-5 lg:px-0 text-[11px]'>
+                        <div key={index} className='flex justify-between text-[#7C827D] 2xl:px-5 lg:px-0 text-[11px]'>
 
                             <div className='flex gap-2 xl:gap-2 md:gap-8'>
 

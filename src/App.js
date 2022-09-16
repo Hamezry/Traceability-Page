@@ -13,7 +13,7 @@ function App() {
           <Route path='/' element={
             <div>
               <Navbar />
-              <div className="lg:flex lg:justify-between w-full  lg:h-[calc(100vh-90px)] lg:overflow-y-hidden bg-[#E5E5E5]">
+              <div className="lg:flex lg:justify-between w-full  lg:h-[calc(100vh-90px)] lg:overflow-y-hidden bg-[#f8f7f7]">
                 <Sidemap />
                 <Information />
               </div>
