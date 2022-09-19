@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom'
 
 
 
-function Information({setLat, setLong}) {
+function Information() {
 
     const [list, setList] = useState([])
     const search = useLocation().search;
@@ -16,13 +16,11 @@ function Information({setLat, setLong}) {
         axios.get(`https://wb3test.afexnigeria.com/WB3/api/v1/traceability/info/${qr_code}`)
             .then(res => {
                 setList(res.data.data)
-                setLat(res.data.data.activities[0].latitude)
-                setLong(res.data.data.activities[0].longitude)
                 console.log(res.data)
             }).catch(err => {
                 console.log(err)
             })
-    }, [qr_code, setLat, setLong])
+    }, [qr_code])
 
 
     return (

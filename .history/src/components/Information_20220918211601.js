@@ -22,7 +22,7 @@ function Information({setLat, setLong}) {
             }).catch(err => {
                 console.log(err)
             })
-    }, [qr_code, setLat, setLong])
+    }, [qr_code])
 
 
     return (

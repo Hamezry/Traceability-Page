@@ -4,7 +4,7 @@ import {useJsApiLoader, GoogleMap, Marker} from '@react-google-maps/api';
 
 function Sidemap({lat, long}) {
 
-  const center = {lat, lng:long}
+  const center = {lat, long}
 
 
   const { isLoaded } = useJsApiLoader({

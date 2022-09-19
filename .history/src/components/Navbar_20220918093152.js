@@ -3,8 +3,8 @@ import logo from '../Assets/logo.svg'
 
 const Navbar = () => {
   return (
-    <div className='w-full flex  h-[90px] bg-white sticky font-muli  z-30  top-0 items-center'>
-      <div className='w-full lg:w-[71%] flex justify-center lg:justify-start'>
+    <div className='w-full flex justify-center h-[90px] bg-white sticky font-muli  z-30  top-0 lg:items-center lg:justify-between '>
+      <div className='w-[70%]'>
         <img src={logo} alt='nav-icon' className='h-[80px] w-[188px] lg:ml-[50px]' />
       </div>
 

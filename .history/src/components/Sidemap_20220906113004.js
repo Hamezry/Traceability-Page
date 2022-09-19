@@ -1,11 +1,9 @@
 import React from 'react'
 import {useJsApiLoader, GoogleMap, Marker} from '@react-google-maps/api';
 
+const center = {lat:48.8584, lng:2.294}
 
-function Sidemap({lat, long}) {
-
-  const center = {lat, lng:long}
-
+function Sidemap() {
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey:process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -16,7 +14,7 @@ function Sidemap({lat, long}) {
   }
   return (
 
-    <div class= "h-[600px] w-full lg:h-[calc(100vh-90px)] lg:w-[70%]">
+    <div class= "h-[600px] w-full lg:h-[calc(100vh-90px)] lg:w-[68%]">
 
       <div className='hidden lg:block p-4 lg:p-0 lg:w-full h-[100%]'>
           <GoogleMap

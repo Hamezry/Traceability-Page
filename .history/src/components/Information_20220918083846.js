@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom'
 
 
 
-function Information({setLat, setLong}) {
+function Information() {
 
     const [list, setList] = useState([])
     const search = useLocation().search;
@@ -16,21 +16,19 @@ function Information({setLat, setLong}) {
         axios.get(`https://wb3test.afexnigeria.com/WB3/api/v1/traceability/info/${qr_code}`)
             .then(res => {
                 setList(res.data.data)
-                setLat(res.data.data.activities[0].latitude)
-                setLong(res.data.data.activities[0].longitude)
                 console.log(res.data)
             }).catch(err => {
                 console.log(err)
             })
-    }, [qr_code, setLat, setLong])
+    }, [qr_code])
 
 
     return (
-        <div className='lg:h-full  lg:w-[30%] font-muli lg:overflow-y-auto'>
+        <div className='lg:h-full  lg:w-[32%] font-muli lg:overflow-y-auto'>
 
             <div id="TQC" className=" z-10  top-0 flex lg:flex  flex-col px-[20px]">
 
-                <div className="flex-1 flex bg-white lg:w-[100%] lg:mx-auto lg:mt-[25px] flex-col h-[556px] p-[20px] rounded-3xl">
+                <div className="flex-1 flex bg-white lg:w-[90%] lg:mx-auto lg:mt-[25px] flex-col h-[556px] p-[20px] rounded-3xl">
 
                     {/*TQC */}
                     <div className='mb-4 border-b-2 border-b-gray-100 '>
@@ -83,7 +81,7 @@ function Information({setLat, setLong}) {
 
                     {list?.activities?.map((item, index) =>
 
-                        <div key={index} className='flex justify-between stroke-amber-50 text-[#7C827D] 2xl:px-5 lg:px-0 text-[11px]'>
+                        <div key={index} className='flex 2xl:justify-between stroke-amber-50 text-[#7C827D] 2xl:px-5 lg:px-0 text-[11px]'>
 
                             <div className='flex gap-2 xl:gap-2 md:gap-8'>
 
@@ -92,7 +90,7 @@ function Information({setLat, setLong}) {
                                     <div className='border border-dotted border-[#7C827D] min-h-[100px] max-h-[120px] w-[1px]'></div>
 
                                 </div>
-                                <div className='flex flex-col lg:w-[160px] md:w-[270px] w-[130px]' >
+                                <div className='flex flex-col lg:w-[180px] md:w-[270px] w-[130px]' >
                                     <p className='font-semibold mt-2 lg:text-[13px]'>{item.action} </p>
                                     <span className='text-[#7C827D] text-[9px] mt-2 lg:text-[11px]'>{item.description}</span>
                                 </div>
