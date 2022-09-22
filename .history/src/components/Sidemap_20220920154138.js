@@ -9,7 +9,7 @@ function Sidemap({lat, long}) {
 
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey:'AIzaSyD0jXG6tZX5eypxrx-NqpzHsyFAWKT1Y2w',
+    googleMapsApiKey:'AIzaSyC5WziKjQsfMll93PZOEzDQscf-g7PyLaI',
   });
 
   if (!isLoaded){

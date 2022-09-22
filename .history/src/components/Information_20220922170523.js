@@ -37,7 +37,7 @@ function Information({ setLat, setLong }) {
                         <div className='bg-[#76AD94] text-white text-center py-2 font-semibold text-[16px] max-w-[220px] h-[38px] mb-[30px] rounded-xl'> <p>{list.qr_code}</p></div>
                         <p className='text-[#54565B] text-[14px] mb-4 font-semibold'>Purchased on <span className='font-normal'>{list.purchased_on}</span></p>
                         {
-                            list?.purchased_at?.map((item) => {
+                            list?.purchased_at?.data((item) => {
                                 return (
                                     <p className=' text-[#54565B] text-[14px] mb-4 font-semibold'>Purchased at <span className='font-normal'>{item.warehouse__name}</span></p>
 

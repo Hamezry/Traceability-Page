@@ -5,7 +5,6 @@ import {useJsApiLoader, GoogleMap, Marker} from '@react-google-maps/api';
 function Sidemap({lat, long}) {
 
   const center = {lat, lng:long}
-  
 
 
   const { isLoaded } = useJsApiLoader({
@@ -22,7 +21,7 @@ function Sidemap({lat, long}) {
       <div className='hidden lg:block p-4 lg:p-0 lg:w-full h-[100%]'>
           <GoogleMap
           mapContainerStyle={{width:'100%', height:'100%'}}
-          center={center} zoom={16}
+          center={center} zoom={18}
           options={{
             zoomControl:false,
             streetViewControl:false,

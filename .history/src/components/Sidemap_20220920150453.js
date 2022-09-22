@@ -5,7 +5,6 @@ import {useJsApiLoader, GoogleMap, Marker} from '@react-google-maps/api';
 function Sidemap({lat, long}) {
 
   const center = {lat, lng:long}
-  
 
 
   const { isLoaded } = useJsApiLoader({
@@ -30,7 +29,7 @@ function Sidemap({lat, long}) {
             fullscreenControl:false,
           }}
           >
-            <Marker className position={center}/> 
+            <Marker position={center}/> 
 
           </GoogleMap>
       </div>
@@ -46,7 +45,7 @@ function Sidemap({lat, long}) {
             fullscreenControl:false,
           }}
           >
-            <Marker  position={center}/> 
+            <Marker position={center}/> 
 
           </GoogleMap>
       </div>
