@@ -6,7 +6,7 @@ function Sidemap({ lat, long }) {
   const center = { lat, lng: long };
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyD0jXG6tZX5eypxrx-NqpzHsyFAWKT1Y2w",
+    googleMapsApiKey: "AIzaSyCchGLWMITMXG1idSuksKIp-oLacr7yXa0",
   });
 
   if (!isLoaded) {
@@ -54,9 +54,9 @@ function Sidemap({ lat, long }) {
           <Marker
             position={center}
             style={{
-              backgroundColor: "#38CB89",
-              fillColor: "#38CB89",
-              strokeColor: "#38CB89",
+              backgroundColor: "#0000ff",
+              fillColor: "#0000ff",
+              strokeColor: "0000ff",
             }}
           />
         </GoogleMap>

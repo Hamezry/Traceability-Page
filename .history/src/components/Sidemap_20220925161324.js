@@ -6,7 +6,7 @@ function Sidemap({ lat, long }) {
   const center = { lat, lng: long };
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyD0jXG6tZX5eypxrx-NqpzHsyFAWKT1Y2w",
+    googleMapsApiKey: "AIzaSyCchGLWMITMXG1idSuksKIp-oLacr7yXa0",
   });
 
   if (!isLoaded) {

@@ -6,14 +6,14 @@ function Sidemap({ lat, long }) {
   const center = { lat, lng: long };
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyD0jXG6tZX5eypxrx-NqpzHsyFAWKT1Y2w",
+    googleMapsApiKey: "AIzaSyCchGLWMITMXG1idSuksKIp-oLacr7yXa0",
   });
 
   if (!isLoaded) {
     return <h1>Loading</h1>;
   }
   return (
-    <div className="relative h-[600px] w-full lg:h-[calc(100vh-90px)] lg:w-[70%]">
+    <div class="relative h-[600px] w-full lg:h-[calc(100vh-90px)] lg:w-[70%]">
       <div className="hidden lg:block p-4 lg:p-0 lg:w-full h-[100%]">
         <GoogleMap
           mapContainerStyle={{ width: "100%", height: "100%" }}
@@ -26,12 +26,7 @@ function Sidemap({ lat, long }) {
             fullscreenControl: false,
           }}
         >
-          <Marker position={center}
-          style={{
-            backgroundColor: "#0000ff",
-            fillColor: "#0000ff",
-            strokeColor: "0000ff",
-          }} />
+          <Marker className position={center} />
         </GoogleMap>
       </div>
 
@@ -54,9 +49,9 @@ function Sidemap({ lat, long }) {
           <Marker
             position={center}
             style={{
-              backgroundColor: "#38CB89",
-              fillColor: "#38CB89",
-              strokeColor: "#38CB89",
+              backgroundColor: "#0000ff",
+              fillColor: "#0000ff",
+              strokeColor: "0000ff",
             }}
           />
         </GoogleMap>
