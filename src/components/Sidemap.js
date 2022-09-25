@@ -1,6 +1,7 @@
 import React from "react";
 import { useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
-import purch from "../Assets/purchase.svg";
+import purch from "../Assets/farm.svg";
+import locationIcon from "../Assets/Vector.svg";
 
 function Sidemap({ lat, long }) {
   const center = { lat, lng: long };
@@ -26,12 +27,32 @@ function Sidemap({ lat, long }) {
             fullscreenControl: false,
           }}
         >
-          <Marker position={center}
-          style={{
-            backgroundColor: "#0000ff",
-            fillColor: "#0000ff",
-            strokeColor: "0000ff",
-          }} />
+          <Marker
+            position={center}
+            style={{
+              backgroundColor: "#0000ff",
+              fillColor: "#0000ff",
+              strokeColor: "0000ff",
+            }}
+          />
+
+          <Marker
+            position={center}
+            style={{
+              backgroundColor: "#0000ff",
+              fillColor: "#0000ff",
+              strokeColor: "0000ff",
+            }}
+          />
+
+          <Marker
+            position={center}
+            style={{
+              backgroundColor: "#0000ff",
+              fillColor: "#0000ff",
+              strokeColor: "0000ff",
+            }}
+          />
         </GoogleMap>
       </div>
 
@@ -62,15 +83,18 @@ function Sidemap({ lat, long }) {
         </GoogleMap>
       </div>
 
-      <div className="flex p-4 absolute top-[20%] rounded-3xl left-[30%] bg-white h-[150px] w-[500px] ">
+      <div className="flex p-4 absolute top-[20%] rounded-3xl left-[30%] bg-white text-[#54565B] w-[500px] ">
         <img src={purch} alt="prc" className="h-[100px] w-[200px]" />
 
-        <div className="flex flex-col gap-4">
-          <h2>Farm Location</h2>
+        <div className="flex  flex-col gap-4">
+          <div className="flex text-[18px] font-bold gap-2">
+            <img src={locationIcon} alt="prc" />
+            <h2>Farm Location</h2>
+          </div>
           <p>Kaduna South</p>
           <p>
             {" "}
-            <span>106km</span> / <span>30min</span> from Warehouse{" "}
+            <span>0km</span> / <span>0min</span> from Warehouse
           </p>
         </div>
       </div>
