@@ -18,8 +18,8 @@ function Information({ setLat, setLong, setFarmlong, setFarmlat }) {
                 setList(res.data.data)
                 setLat(res.data.data.purchased_at[0].warehouse__latitude)
                 setLong(res.data.data.purchased_at[0].warehouse__longitude)
-                setFarmlat(res.data.data.farmers[0].farm_coordinates.split(',')[0])
-                setFarmlong(res.data.data.farmers[0].farm_coordinates.split(',')[1])
+                // setFarmlat(res.data.data.farmers[0].farm_coordinates.split(',')[0])
+                // setFarmlong(res.data.data.farmers[0].farm_coordinates.split(',')[1])
                 console.log(res.data)
             }).catch(err => {
                 console.log(err)

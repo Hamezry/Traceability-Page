@@ -1,68 +1,25 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
 import purch from "../Assets/farm.svg";
 import locationIcon from "../Assets/Vector.svg";
 
-function Sidemap({ lat, long, farmlat, farmlong }) {
-const [lga, setLga]= useState("")
-const [place, setPlace]= useState("")
-
-  useEffect(()=>{
-  axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${farmlat},${farmlong}&sensor=true&key=AIzaSyD0jXG6tZX5eypxrx-NqpzHsyFAWKT1Y2w`)
-  //.then(response => response.json())
-  .then(data => {
-  console.log(data)
-  setLga(data?.data?.results[0].address_components[2].long_name)
-  setPlace(data?.data?.results[0].address_components[3].long_name)
-  })
-
-  .catch(error => console.error(error))
-  },[farmlat, farmlong])
-
+function Sidemap({ lat, long }) {
   const center = { lat, lng: long };
+
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: "AIzaSyD0jXG6tZX5eypxrx-NqpzHsyFAWKT1Y2w",
   });
 
-
-
-  const deg2rad = (deg) => {
-    return Number(deg) * (Math.PI / 180)
+  if (!isLoaded) {
+    return <h1>Loading</h1>;
   }
-
-  const getDistanceFromLatLonInKm = () => {
-    var R = 6371; // Radius of the earth in km
-    var dLat = deg2rad(farmlat - lat);  // deg2rad below
-    var dLon = deg2rad(farmlong - long);
-    var a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(deg2rad(lat)) * Math.cos(deg2rad(farmlat)) *
-      Math.sin(dLon / 2) * Math.sin(dLon / 2)
-      ;
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = R * c; // Distance in km
-    console.log(d)
-    return d;
-  }
-
-  const getMinutes = (n)=>{
-    return n * 0.67
-  }
-
-
-
   return (
-    !isLoaded ? 
-     <h1>Loading</h1> :
-    
     <div className="relative h-[600px] w-full lg:h-[calc(100vh-90px)] lg:w-[70%]">
       <div className="hidden lg:block p-4 lg:p-0 lg:w-full h-[100%]">
         <GoogleMap
           mapContainerStyle={{ width: "100%", height: "100%" }}
           center={center}
-          zoom={15}
+          zoom={16}
           options={{
             zoomControl: false,
             streetViewControl: false,
@@ -126,7 +83,7 @@ const [place, setPlace]= useState("")
         </GoogleMap>
       </div>
 
-      <div className="flex absolute p-3 gap-4 top-[25%] text-[12px] md:text-[16px] rounded-3xl md:left-[35%] left-[9%] bg-white text-[#54565B] w-[320px] h-[140px] md:h-[150px] md:w-[420px] ">
+      <div className="flex absolute p-3 gap-4 top-[25%] text-[11px] rounded-3xl md:left-[35%] left-[12%] bg-white text-[#54565B] w-[300px] h-[135px] md:h-[150px] md:w-[420px] ">
         <div><img src={purch} alt="prc" /></div>
 
         <div className="flex  flex-col gap-4">
@@ -134,9 +91,9 @@ const [place, setPlace]= useState("")
             <img src={locationIcon} alt="prc" />
             <h2 className="text-[#54565B] font-[700]">Farm Location</h2>
           </div>
-          <p>{place}, {lga}</p>
+          <p>Kaduna South</p>
           <p>
-            <span className="text-[#76AD94]">{getDistanceFromLatLonInKm().toFixed(2)}km</span> / <span className="text-[#76AD94]">{getMinutes(getDistanceFromLatLonInKm()).toFixed(2)}min</span> from Warehouse
+            <span className="text-[#76AD94]">0km</span> / <span className="text-[#76AD94]">0min</span> from Warehouse
           </p>
         </div>
       </div>

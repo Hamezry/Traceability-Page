@@ -8,8 +8,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
   const [long, setLong] = useState(0)
   const [lat, setLat] = useState(0)
-  const [farmlat, setFarmlat] = useState(0)
-  const [farmlong, setFarmlong] = useState(0)
+  const [farmlat, setFarmlat] =(0)
+  const [farmlong, setFarmlong] =(0)
   
   return (
     <BrowserRouter>

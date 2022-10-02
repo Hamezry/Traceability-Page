@@ -14,8 +14,8 @@ const [place, setPlace]= useState("")
   //.then(response => response.json())
   .then(data => {
   console.log(data)
-  setLga(data?.data?.results[0].address_components[2].long_name)
-  setPlace(data?.data?.results[0].address_components[3].long_name)
+  setLga(data?.data?.results[0].address_components[1])
+  setPlace(data?.data?.results[0].address_components[2])
   })
 
   .catch(error => console.error(error))

@@ -24,7 +24,7 @@ function Information({ setLat, setLong, setFarmlong, setFarmlat }) {
             }).catch(err => {
                 console.log(err)
             })
-    }, [qr_code, setLat, setLong, setFarmlat, setFarmlong])
+    }, [qr_code, setLat, setLong])
 
 
     return (

@@ -6,16 +6,16 @@ import purch from "../Assets/farm.svg";
 import locationIcon from "../Assets/Vector.svg";
 
 function Sidemap({ lat, long, farmlat, farmlong }) {
-const [lga, setLga]= useState("")
-const [place, setPlace]= useState("")
+const [lga,setLga]= useState("")
+const [state,setState]= useState("")
 
   useEffect(()=>{
   axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${farmlat},${farmlong}&sensor=true&key=AIzaSyD0jXG6tZX5eypxrx-NqpzHsyFAWKT1Y2w`)
   //.then(response => response.json())
   .then(data => {
   console.log(data)
-  setLga(data?.data?.results[0].address_components[2].long_name)
-  setPlace(data?.data?.results[0].address_components[3].long_name)
+  setLga(data?.data?.results[0].address_components[1])
+  setState(data?.data?.results[0].address_components[2])
   })
 
   .catch(error => console.error(error))
@@ -134,7 +134,7 @@ const [place, setPlace]= useState("")
             <img src={locationIcon} alt="prc" />
             <h2 className="text-[#54565B] font-[700]">Farm Location</h2>
           </div>
-          <p>{place}, {lga}</p>
+          <p>{state}, {lga}</p>
           <p>
             <span className="text-[#76AD94]">{getDistanceFromLatLonInKm().toFixed(2)}km</span> / <span className="text-[#76AD94]">{getMinutes(getDistanceFromLatLonInKm()).toFixed(2)}min</span> from Warehouse
           </p>
